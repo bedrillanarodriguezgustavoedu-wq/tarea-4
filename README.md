@@ -28,6 +28,14 @@ server. To connect Resend, set `RESEND_API_KEY`; additionally set `RESEND_FROM_E
 contacts to Resend. Set these environment variables in the same terminal before starting the SSR
 server; never commit API keys.
 
+## Deployment on Render
+
+The root `render.yaml` defines a paid Node web service with a 1 GB persistent disk mounted at
+`/var/data`, so form records survive service restarts and deployments. Create a new Blueprint in
+the Render dashboard and connect this GitHub repository. During setup, provide `RESEND_API_KEY` and
+`RESEND_FROM_EMAIL` as private environment variables; `CONTACT_EMAIL` is already set to the
+configured destination. Review Render's current pricing before confirming the Blueprint.
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
@@ -73,5 +81,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
 # tarea-4
+
 # tarea-4

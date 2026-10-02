@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: codera-web
+    runtime: node
+    plan: starter
+    region: oregon
+    buildCommand: npm ci && npm run build
+    startCommand: npm run serve:ssr:ecommerce
+    disk:
+      name: codera-submissions
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+      - key: CONTACT_EMAIL
+        value: bedrillanarodriguezgustavoedu@gmail.com
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        sync: false
